@@ -32,7 +32,7 @@ namespace Youtube
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(blocoDeNotas));
             this.menu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuAbrir = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAbrirArquivo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSalvar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSalvarComo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -57,7 +57,7 @@ namespace Youtube
             // 
             this.fileToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuAbrir,
+            this.menuAbrirArquivo,
             this.menuSalvar,
             this.menuSalvarComo,
             this.toolStripSeparator1,
@@ -68,37 +68,38 @@ namespace Youtube
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(77, 23);
             this.fileToolStripMenuItem.Text = "Arquivo";
             // 
-            // menuAbrir
+            // menuAbrirArquivo
             // 
-            this.menuAbrir.BackColor = System.Drawing.Color.Transparent;
-            this.menuAbrir.Name = "menuAbrir";
-            this.menuAbrir.Size = new System.Drawing.Size(171, 24);
-            this.menuAbrir.Text = "Abrir arquivo";
+            this.menuAbrirArquivo.BackColor = System.Drawing.Color.Transparent;
+            this.menuAbrirArquivo.Name = "menuAbrirArquivo";
+            this.menuAbrirArquivo.Size = new System.Drawing.Size(180, 24);
+            this.menuAbrirArquivo.Text = "Abrir arquivo";
+            this.menuAbrirArquivo.Click += new System.EventHandler(this.MenuAbrirArquivo_Click);
             // 
             // menuSalvar
             // 
             this.menuSalvar.BackColor = System.Drawing.Color.Transparent;
             this.menuSalvar.Name = "menuSalvar";
-            this.menuSalvar.Size = new System.Drawing.Size(171, 24);
+            this.menuSalvar.Size = new System.Drawing.Size(180, 24);
             this.menuSalvar.Text = "Salvar";
             // 
             // menuSalvarComo
             // 
             this.menuSalvarComo.BackColor = System.Drawing.Color.Transparent;
             this.menuSalvarComo.Name = "menuSalvarComo";
-            this.menuSalvarComo.Size = new System.Drawing.Size(171, 24);
+            this.menuSalvarComo.Size = new System.Drawing.Size(180, 24);
             this.menuSalvarComo.Text = "Salvar como";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(168, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // menuSair
             // 
             this.menuSair.BackColor = System.Drawing.Color.Transparent;
             this.menuSair.Name = "menuSair";
-            this.menuSair.Size = new System.Drawing.Size(171, 24);
+            this.menuSair.Size = new System.Drawing.Size(180, 24);
             this.menuSair.Text = "Sair";
             // 
             // txtTexto
@@ -106,7 +107,7 @@ namespace Youtube
             this.txtTexto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(34)))), ((int)(((byte)(61)))));
             this.txtTexto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTexto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTexto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTexto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTexto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(252)))), ((int)(((byte)(82)))));
             this.txtTexto.Location = new System.Drawing.Point(0, 27);
             this.txtTexto.Multiline = true;
@@ -115,7 +116,7 @@ namespace Youtube
             this.txtTexto.Size = new System.Drawing.Size(745, 414);
             this.txtTexto.TabIndex = 1;
             this.txtTexto.WordWrap = false;
-            this.txtTexto.TextChanged += new System.EventHandler(this.txtTexto_TextChanged);
+            this.txtTexto.TextChanged += new System.EventHandler(this.TxtTexto_TextChanged);
             // 
             // blocoDeNotas
             // 
@@ -147,7 +148,7 @@ namespace Youtube
         private System.Windows.Forms.ToolStripMenuItem menuSalvarComo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem menuSair;
-        private System.Windows.Forms.ToolStripMenuItem menuAbrir;
+        private System.Windows.Forms.ToolStripMenuItem menuAbrirArquivo;
         private System.Windows.Forms.ToolStripMenuItem menuSalvar;
     }
 }
