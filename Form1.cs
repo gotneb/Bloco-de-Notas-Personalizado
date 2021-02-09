@@ -86,6 +86,14 @@ namespace Youtube
                 SalvarArquivo();
                 SalvarModificacoes();
             }
+            /*
+             * Se o arquivo não estiver salvo em nenhum lugar, uma janela
+             * solicita para o usuário salvar em um local determinado pelo user
+             */
+            else
+            {
+                SalvarArquivoComo();
+            }
         }
 
         private void SalvarArquivo()
@@ -94,6 +102,29 @@ namespace Youtube
             using(var escritor = new StreamWriter(this.path))
             {
                 escritor.WriteLine(txtTexto.Text);
+            }
+        }
+
+        private void SalvarArquivoComo()
+        {
+            // Janela para pedir o local para salvar arquivo
+            var salvarArquivo = new SaveFileDialog();
+            salvarArquivo.Title = "Procure o local para salvar o arquivo";
+            salvarArquivo.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            salvarArquivo.FilterIndex = 1;
+            salvarArquivo.RestoreDirectory = true;
+
+            var resposta = salvarArquivo.ShowDialog();
+
+            if (resposta == DialogResult.OK)
+            {
+                using (var escritor = new StreamWriter(salvarArquivo.FileName))
+                {
+                    escritor.WriteLine(txtTexto.Text);
+                }
+                this.path = salvarArquivo.FileName;
+                nomeArquivo = Path.GetFileName(this.path);
+                SalvarModificacoes();
             }
         }
 
@@ -123,6 +154,16 @@ namespace Youtube
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void MenuSalvarComo_Click(object sender, EventArgs e)
+        {
+            SalvarArquivoComo();
+        }
+
+        private void MenuSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

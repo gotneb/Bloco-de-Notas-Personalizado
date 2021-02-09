@@ -36,7 +36,7 @@ namespace Youtube
             this.MenuSalvar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSalvarComo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.menuSair = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuSair = new System.Windows.Forms.ToolStripMenuItem();
             this.txtTexto = new System.Windows.Forms.TextBox();
             this.menu.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +61,7 @@ namespace Youtube
             this.MenuSalvar,
             this.menuSalvarComo,
             this.toolStripSeparator1,
-            this.menuSair});
+            this.MenuSair});
             this.fileToolStripMenuItem.Font = new System.Drawing.Font("Microsoft JhengHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -91,18 +91,20 @@ namespace Youtube
             this.menuSalvarComo.Name = "menuSalvarComo";
             this.menuSalvarComo.Size = new System.Drawing.Size(180, 24);
             this.menuSalvarComo.Text = "Salvar como";
+            this.menuSalvarComo.Click += new System.EventHandler(this.MenuSalvarComo_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
-            // menuSair
+            // MenuSair
             // 
-            this.menuSair.BackColor = System.Drawing.Color.Transparent;
-            this.menuSair.Name = "menuSair";
-            this.menuSair.Size = new System.Drawing.Size(180, 24);
-            this.menuSair.Text = "Sair";
+            this.MenuSair.BackColor = System.Drawing.Color.Transparent;
+            this.MenuSair.Name = "MenuSair";
+            this.MenuSair.Size = new System.Drawing.Size(180, 24);
+            this.MenuSair.Text = "Sair";
+            this.MenuSair.Click += new System.EventHandler(this.MenuSair_Click);
             // 
             // txtTexto
             // 
@@ -150,7 +152,7 @@ namespace Youtube
         private System.Windows.Forms.TextBox txtTexto;
         private System.Windows.Forms.ToolStripMenuItem menuSalvarComo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem menuSair;
+        private System.Windows.Forms.ToolStripMenuItem MenuSair;
         private System.Windows.Forms.ToolStripMenuItem menuAbrirArquivo;
         private System.Windows.Forms.ToolStripMenuItem MenuSalvar;
     }
