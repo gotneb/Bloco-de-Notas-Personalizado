@@ -72,7 +72,8 @@ namespace Youtube
             // 
             this.menuAbrirArquivo.BackColor = System.Drawing.Color.Transparent;
             this.menuAbrirArquivo.Name = "menuAbrirArquivo";
-            this.menuAbrirArquivo.Size = new System.Drawing.Size(180, 24);
+            this.menuAbrirArquivo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.menuAbrirArquivo.Size = new System.Drawing.Size(261, 24);
             this.menuAbrirArquivo.Text = "Abrir arquivo";
             this.menuAbrirArquivo.Click += new System.EventHandler(this.MenuAbrirArquivo_Click);
             // 
@@ -81,7 +82,7 @@ namespace Youtube
             this.MenuSalvar.BackColor = System.Drawing.Color.Transparent;
             this.MenuSalvar.Name = "MenuSalvar";
             this.MenuSalvar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.MenuSalvar.Size = new System.Drawing.Size(180, 24);
+            this.MenuSalvar.Size = new System.Drawing.Size(261, 24);
             this.MenuSalvar.Text = "Salvar";
             this.MenuSalvar.Click += new System.EventHandler(this.MenuSalvar_Click);
             // 
@@ -89,20 +90,22 @@ namespace Youtube
             // 
             this.menuSalvarComo.BackColor = System.Drawing.Color.Transparent;
             this.menuSalvarComo.Name = "menuSalvarComo";
-            this.menuSalvarComo.Size = new System.Drawing.Size(180, 24);
+            this.menuSalvarComo.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.menuSalvarComo.Size = new System.Drawing.Size(261, 24);
             this.menuSalvarComo.Text = "Salvar como";
             this.menuSalvarComo.Click += new System.EventHandler(this.MenuSalvarComo_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(258, 6);
             // 
             // MenuSair
             // 
             this.MenuSair.BackColor = System.Drawing.Color.Transparent;
             this.MenuSair.Name = "MenuSair";
-            this.MenuSair.Size = new System.Drawing.Size(180, 24);
+            this.MenuSair.Size = new System.Drawing.Size(261, 24);
             this.MenuSair.Text = "Sair";
             this.MenuSair.Click += new System.EventHandler(this.MenuSair_Click);
             // 

@@ -43,6 +43,8 @@ namespace Youtube
                 estaSalvo = true;
                 this.Text = nomeArquivo;
             }
+
+            this.Text += " - Bloco de Notas";
         }
 
         // Abre uma janela para que o user esoclha qual arquivo abrir
@@ -74,7 +76,7 @@ namespace Youtube
         private void SalvarModificacoes()
         {
             this.estaSalvo = true;
-            this.Text = nomeArquivo;
+            this.Text = nomeArquivo + " - Bloco de Notas";
             this.textoSalvo = txtTexto.Text;
         }
 
