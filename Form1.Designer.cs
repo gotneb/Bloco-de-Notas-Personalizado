@@ -80,6 +80,7 @@ namespace Youtube
             // 
             this.MenuSalvar.BackColor = System.Drawing.Color.Transparent;
             this.MenuSalvar.Name = "MenuSalvar";
+            this.MenuSalvar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.MenuSalvar.Size = new System.Drawing.Size(180, 24);
             this.MenuSalvar.Text = "Salvar";
             this.MenuSalvar.Click += new System.EventHandler(this.MenuSalvar_Click);
