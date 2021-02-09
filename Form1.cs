@@ -20,8 +20,9 @@ namespace Youtube
         {
             estaSalvo = true;
             textoSalvo = txtTexto.Text;
-            nomeArquivo = "Bloco de notas";
+            nomeArquivo = "Novo bloco de notas";
             path = "";
+            SalvarModificacoes();
         }
 
         /*
@@ -79,9 +80,11 @@ namespace Youtube
 
         private void MenuSalvar_Click(object sender, EventArgs e)
         {
+            // Salva automacamente caso o arquivo ja 'exista'
             if (path != "")
             {
                 SalvarArquivo();
+                SalvarModificacoes();
             }
         }
 
@@ -90,10 +93,11 @@ namespace Youtube
             // Cria um escritor para sobrescrever os arquivos
             using(var escritor = new StreamWriter(this.path))
             {
-                escritor.Write(txtTexto.Text);
+                escritor.WriteLine(txtTexto.Text);
             }
         }
 
+        // Fecha o bloco de notas
         private void BlocoDeNotas_FormClosing(object sender, FormClosingEventArgs e)
         {
             /*
@@ -103,7 +107,7 @@ namespace Youtube
             if (estaSalvo == false)
             {
                 var botoes = MessageBoxButtons.YesNoCancel;
-                var mensagem = "O programa não possui alterações salvas, deseja salvar?";
+                var mensagem = "O programa não possui alterações salvas\ndeseja salvar?";
                 var titulo = "Modificações pendentes";
                 var icone = MessageBoxIcon.Warning;
 
