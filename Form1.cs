@@ -8,7 +8,8 @@ namespace Youtube
     {
         private bool estaSalvo;
         private string textoSalvo;
-        private string nomeJanela;
+        private string nomeArquivo;
+        private string path;
 
         public blocoDeNotas()
         {
@@ -19,7 +20,8 @@ namespace Youtube
         {
             estaSalvo = true;
             textoSalvo = txtTexto.Text;
-            nomeJanela = "Bloco de notas";
+            nomeArquivo = "Bloco de notas";
+            path = "";
         }
 
         /*
@@ -33,12 +35,12 @@ namespace Youtube
 
             if (textoAtual != textoSalvo && estaSalvo == false)
             {
-                this.Text = "*" + nomeJanela;
+                this.Text = "*" + nomeArquivo;
             }
             if (textoAtual == textoSalvo)
             {
                 estaSalvo = true;
-                this.Text = nomeJanela;
+                this.Text = nomeArquivo;
             }
         }
 
@@ -60,6 +62,61 @@ namespace Youtube
                 using(var leitor = new StreamReader(abrirArquivo.FileName))
                 {
                     txtTexto.Text = leitor.ReadToEnd();
+                }
+                nomeArquivo = abrirArquivo.SafeFileName;
+                path = abrirArquivo.FileName;
+                SalvarModificacoes();
+            }
+        }
+
+        // Método que salva o texto e o título do bloco de notas
+        private void SalvarModificacoes()
+        {
+            this.estaSalvo = true;
+            this.Text = nomeArquivo;
+            this.textoSalvo = txtTexto.Text;
+        }
+
+        private void MenuSalvar_Click(object sender, EventArgs e)
+        {
+            if (path != "")
+            {
+                SalvarArquivo();
+            }
+        }
+
+        private void SalvarArquivo()
+        {
+            // Cria um escritor para sobrescrever os arquivos
+            using(var escritor = new StreamWriter(this.path))
+            {
+                escritor.Write(txtTexto.Text);
+            }
+        }
+
+        private void BlocoDeNotas_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            /*
+             * Caso o user feche a janela sem salvar as alterações, o programa
+             * questiona se ele deseja salvar
+             * */
+            if (estaSalvo == false)
+            {
+                var botoes = MessageBoxButtons.YesNoCancel;
+                var mensagem = "O programa não possui alterações salvas, deseja salvar?";
+                var titulo = "Modificações pendentes";
+                var icone = MessageBoxIcon.Warning;
+
+                var resposta = MessageBox.Show(mensagem, titulo, botoes, icone);
+
+                // Salva o arquivo
+                if (resposta == DialogResult.Yes)
+                {
+                    SalvarArquivo();
+                }
+                else if (resposta == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
                 }
             }
         }

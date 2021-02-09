@@ -33,7 +33,7 @@ namespace Youtube
             this.menu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAbrirArquivo = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuSalvar = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuSalvar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSalvarComo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuSair = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +58,7 @@ namespace Youtube
             this.fileToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAbrirArquivo,
-            this.menuSalvar,
+            this.MenuSalvar,
             this.menuSalvarComo,
             this.toolStripSeparator1,
             this.menuSair});
@@ -76,12 +76,13 @@ namespace Youtube
             this.menuAbrirArquivo.Text = "Abrir arquivo";
             this.menuAbrirArquivo.Click += new System.EventHandler(this.MenuAbrirArquivo_Click);
             // 
-            // menuSalvar
+            // MenuSalvar
             // 
-            this.menuSalvar.BackColor = System.Drawing.Color.Transparent;
-            this.menuSalvar.Name = "menuSalvar";
-            this.menuSalvar.Size = new System.Drawing.Size(180, 24);
-            this.menuSalvar.Text = "Salvar";
+            this.MenuSalvar.BackColor = System.Drawing.Color.Transparent;
+            this.MenuSalvar.Name = "MenuSalvar";
+            this.MenuSalvar.Size = new System.Drawing.Size(180, 24);
+            this.MenuSalvar.Text = "Salvar";
+            this.MenuSalvar.Click += new System.EventHandler(this.MenuSalvar_Click);
             // 
             // menuSalvarComo
             // 
@@ -132,6 +133,7 @@ namespace Youtube
             this.Name = "blocoDeNotas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bloco de Notas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BlocoDeNotas_FormClosing);
             this.Load += new System.EventHandler(this.BlocoDeNotas_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
@@ -149,7 +151,7 @@ namespace Youtube
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem menuSair;
         private System.Windows.Forms.ToolStripMenuItem menuAbrirArquivo;
-        private System.Windows.Forms.ToolStripMenuItem menuSalvar;
+        private System.Windows.Forms.ToolStripMenuItem MenuSalvar;
     }
 }
 
