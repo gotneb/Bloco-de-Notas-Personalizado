@@ -1,0 +1,10 @@
+C:\Users\Gabri\Documents\Development\Desktop\Youtube\Youtube\bin\Release\Youtube.exe.config
+C:\Users\Gabri\Documents\Development\Desktop\Youtube\Youtube\bin\Release\Youtube.exe
+C:\Users\Gabri\Documents\Development\Desktop\Youtube\Youtube\bin\Release\Youtube.pdb
+C:\Users\Gabri\Documents\Development\Desktop\Youtube\Youtube\obj\Release\Bloco de Notas.csprojAssemblyReference.cache
+C:\Users\Gabri\Documents\Development\Desktop\Youtube\Youtube\obj\Release\Youtube.blocoDeNotas.resources
+C:\Users\Gabri\Documents\Development\Desktop\Youtube\Youtube\obj\Release\Youtube.Properties.Resources.resources
+C:\Users\Gabri\Documents\Development\Desktop\Youtube\Youtube\obj\Release\Bloco de Notas.csproj.GenerateResource.cache
+C:\Users\Gabri\Documents\Development\Desktop\Youtube\Youtube\obj\Release\Bloco de Notas.csproj.CoreCompileInputs.cache
+C:\Users\Gabri\Documents\Development\Desktop\Youtube\Youtube\obj\Release\Youtube.exe
+C:\Users\Gabri\Documents\Development\Desktop\Youtube\Youtube\obj\Release\Youtube.pdb

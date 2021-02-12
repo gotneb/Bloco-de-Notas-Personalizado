@@ -18,11 +18,34 @@ namespace Youtube
 
         private void BlocoDeNotas_Load(object sender, EventArgs e)
         {
+            // Obtém o caminho onde o arquivo foi aberto
+            string[] args = Environment.GetCommandLineArgs();
+
+            if (args.Length > 1)
+            {
+                using(var leitor = new StreamReader(args[1]))
+                {
+                    txtTexto.Text = leitor.ReadToEnd();
+                }
+                // Caminho atual do arquivo
+                path = args[1];
+                var info = new FileInfo(args[1]);
+                nomeArquivo = info.Name;
+            }
+            else
+            {
+                path = "";
+                nomeArquivo = "Novo bloco de notas";
+            }
             estaSalvo = true;
             textoSalvo = txtTexto.Text;
-            nomeArquivo = "Novo bloco de notas";
-            path = "";
             SalvarModificacoes();
+
+            // Texto selecionado ao iniciar
+            if (txtTexto.Text.Length > 0)
+                txtTexto.SelectionStart = txtTexto.Text.Length - 1;
+            else
+                txtTexto.SelectionStart = txtTexto.Text.Length;
         }
 
         /*
@@ -47,9 +70,10 @@ namespace Youtube
             this.Text += " - Bloco de Notas";
         }
 
-        // Abre uma janela para que o user esoclha qual arquivo abrir
+        // Abre uma janela para que o user escolha qual arquivo deseja abrir
         private void MenuAbrirArquivo_Click(object sender, EventArgs e)
         {
+            // Cria uma janela para abrir um arquivo
             var abrirArquivo = new OpenFileDialog();
             abrirArquivo.Title = "Selecione um arquivo";
             abrirArquivo.Filter = "txt file|*txt";
