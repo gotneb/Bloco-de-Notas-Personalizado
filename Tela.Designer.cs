@@ -121,8 +121,8 @@ namespace Youtube
             this.txtTexto.Name = "txtTexto";
             this.txtTexto.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtTexto.Size = new System.Drawing.Size(745, 414);
-            this.txtTexto.TabIndex = 1;
-            this.txtTexto.WordWrap = false;
+            this.txtTexto.TabIndex = 0;
+            this.txtTexto.TabStop = false;
             this.txtTexto.TextChanged += new System.EventHandler(this.TxtTexto_TextChanged);
             // 
             // blocoDeNotas
