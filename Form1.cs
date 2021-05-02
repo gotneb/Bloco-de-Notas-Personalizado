@@ -37,6 +37,7 @@ namespace Youtube
                 path = "";
                 nomeArquivo = "Novo bloco de notas";
             }
+
             estaSalvo = true;
             textoSalvo = txtTexto.Text;
             SalvarModificacoes();
